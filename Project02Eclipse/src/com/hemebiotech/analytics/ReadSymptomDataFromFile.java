@@ -40,6 +40,9 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 				e.printStackTrace();
 			}
 		}
+		//Debug ---------------------------------
+		System.out.println("rawdData -> " + result);
+		//---------------------------------------
 		
 		return result;
 	}
