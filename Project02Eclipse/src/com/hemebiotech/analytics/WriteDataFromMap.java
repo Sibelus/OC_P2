@@ -4,11 +4,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
+
+/**
+ * Simple brute force implementation
+ */
 public class WriteDataFromMap implements ISymptomWriter{
 
 	private Map<String, Integer> countedDataMap;
 
-
+	/**
+	 * @param A Map<String, Integer> that contain all symptoms and their counted occurences
+	 */
 	public WriteDataFromMap (Map<String, Integer> countedDataMap) {
 		this.countedDataMap = countedDataMap;
 	}

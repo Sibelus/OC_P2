@@ -5,13 +5,15 @@ import java.util.Map;
 import java.util.TreeMap;
 
 
-
+/**
+ * Use of a treeMap to store and count every symptoms (=> key) and their occurences (=> value)
+ */
 public class CountSymptomFromList implements ISymptomCounter {
 	
 	private List<String> rawDataList;
 	
 	/**
-	 * @param An ArrayList that contain all symptoms with possible multiple occurences
+	 * @param A List<String> that contain all symptoms with possible multiple occurences
 	 */
 	public CountSymptomFromList (List<String> rawData) {
 	this.rawDataList = rawData;
@@ -20,15 +22,14 @@ public class CountSymptomFromList implements ISymptomCounter {
 	@Override
 	public Map<String, Integer> countData() {
 		Map<String, Integer> countedData = new TreeMap<String, Integer>();
-		String currentSymptom;
+
 		
-		for(int i=0; i<rawDataList.size(); i++){
-			currentSymptom = rawDataList.get(i);
+		for(String currentSymptom : rawDataList){
 			
 			if(countedData.get(currentSymptom)!= null) {
 				countedData.put(currentSymptom, countedData.get(currentSymptom)+1);
-			}else {
-			countedData.put(rawDataList.get(i), 1);
+			} else {
+				countedData.put(currentSymptom, 1);
 			}	
 		}
 		//Debug ---------------------------------
